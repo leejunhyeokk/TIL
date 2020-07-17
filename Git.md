@@ -90,3 +90,73 @@ Changes to be committed:
 이력을 확정짓는 명령어로, 해당 시점의 스냅샷을 기록한다.
 
 커밋시에는 반드시 메시지를 작성해야하며, 메시지는 변경사항을 알 수 있도록 명확하게 작성(영어-명령문)한다.
+
+```shell
+$ git commit -m "마크다운 정리"
+[master bead27a] 마크다운 정리
+ 1 file changed, 90 insertions(+)
+
+```
+
+커밋 이후에는 아래의 명령어를 통해 지금까지 작성된 이력을 확인한다.
+
+```shell
+$ git log
+commit bead27a5859a99cece524b949c09af0029b06e9b (HEAD -> master)
+Author: leejunhyeokk <dng20@naver.com>
+Date:   Fri Jul 17 11:49:42 2020 +0900
+
+    마크다운 정리
+
+commit 253ce1504552cc9ba67e7d98785e106b909a64c6 (origin/master, origin/HEAD)
+Author: leejunhyeokk <dng20@naver.com>
+Date:   Fri Jul 17 11:20:53 2020 +0900
+
+    Add markdown file
+
+commit 637deb4b28ee40e9af94f4fec5a0702f32e4d376
+Author: leejunhyeokk <dng20@naver.com>
+Date:   Thu Jul 16 17:39:56 2020 +0900
+
+    First commit
+```
+
+커밋은 해시값을 바탕으로 구분된다.
+
+
+
+### 원격 저장소(remote repository) 활용하기
+
+> 원격 저장소 기능을 제공하는 다양한 서비스 중에서 github를 기준으로 설명한다.
+
+#### 0. 준비사항
+
+- github 계정 및 repository
+
+#### 1. 원격 저장소 등록
+
+```shell
+$ git remote add origin https://github.com/leejunhyeokk/til.git
+```
+
+- 원격 저장소`(remote)`로 ,origin이라는 이름으로, `github url`을 등록`(add)`한다.
+- 등록된 원격 저장소 목록을 보기 위해서는 아래의 명령어를 입력한다.
+
+```shell
+$ git remote -v
+origin  https://github.com/leejunhyeokk/til.git (fetch)
+origin  https://github.com/leejunhyeokk/til.git (push)
+```
+
+#### 2. 원격 저장소 업로드(push)
+
+```shell
+$ git push origin master
+```
+
+`origin`으로 설정된 원격 저장소에 `master` 브랜치를 업로드(push) 한다.
+
+이후 변경사항이 생길 때 마다. `add` - `commit` - `push` 를 반복하면 된다.
+
+그리고, 항상 모든 명령어 이후에 연관된 상태(`status`,`log`,`remote -v`)를 확인하자.
+
