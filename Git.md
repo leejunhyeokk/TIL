@@ -148,6 +148,8 @@ origin  https://github.com/leejunhyeokk/til.git (fetch)
 origin  https://github.com/leejunhyeokk/til.git (push)
 ```
 
+
+
 #### 2. 원격 저장소 업로드(push)
 
 ```shell
@@ -159,4 +161,12 @@ $ git push origin master
 이후 변경사항이 생길 때 마다. `add` - `commit` - `push` 를 반복하면 된다.
 
 그리고, 항상 모든 명령어 이후에 연관된 상태(`status`,`log`,`remote -v`)를 확인하자.
+
+
+
+#### 3. 원격 저장소 내용 반영하기 (pull)
+
+```shell
+$ git pull origin master	
+```
 
